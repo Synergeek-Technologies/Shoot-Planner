@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - run: npm ci
+
+      - name: Start local Supabase
+        run: supabase start --exclude imgproxy,pooler,realtime,storage-api,edge-runtime,logflare,vector
+
+      - name: Capture Supabase env
+        run: |
+          STATUS=$(supabase status -o env)
+          echo "NEXT_PUBLIC_SUPABASE_URL=$(echo "$STATUS" | grep '^API_URL=' | cut -d'=' -f2-)" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=$(echo "$STATUS" | grep '^ANON_KEY=' | cut -d'=' -f2-)" >> $GITHUB_ENV
+          echo "SUPABASE_SERVICE_ROLE_KEY=$(echo "$STATUS" | grep '^SERVICE_ROLE_KEY=' | cut -d'=' -f2-)" >> $GITHUB_ENV
+
+      - run: npm run db:types
+
+      - run: npm run lint
+
+      - run: npx tsc --noEmit
+
+      - run: npm test
+
+      - run: npm run test:integration
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - run: npm run test:e2e
