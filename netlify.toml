@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # NEXT_PUBLIC_* values are intentionally embedded in the client bundle.
+  # The Supabase publishable key and URL are safe to expose; the scanner's
+  # default behavior flags them as leaks. SUPABASE_SERVICE_ROLE_KEY stays
+  # scanned — it must never appear in the build output.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY"
