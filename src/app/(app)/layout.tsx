@@ -9,7 +9,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <Sidebar role={profile.role} />
       <div className="flex flex-1 flex-col">
         <Topbar fullName={profile.full_name} role={profile.role} />
-        <main className="flex-1 p-6">{children}</main>
+        <main className="flex-1 px-10 py-10 fade-up">{children}</main>
       </div>
     </div>
   );

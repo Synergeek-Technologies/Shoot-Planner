@@ -17,15 +17,24 @@ export default async function ReelDetailPage({ params }: { params: Promise<{ ree
   const { data: refs } = await supabase
     .from('reel_references').select('id, url, label').eq('reel_id', reel.id);
 
+  const shoot = reel.shoot as { id: string; title: string; brand_id: string; brand: { name: string } | { name: string }[] };
+  const brandName = Array.isArray(shoot.brand) ? shoot.brand[0]?.name : shoot.brand?.name;
   const canEdit = profile.role !== 'viewer';
 
   return (
-    <div className="space-y-6">
-      <nav className="text-sm text-muted-foreground">
-        <Link href={`/brands/${reel.shoot.brand_id}`} className="underline">{reel.shoot.brand.name}</Link>
-        {' / '}
-        <Link href={`/shoots/${reel.shoot.id}`} className="underline">{reel.shoot.title}</Link>
+    <div className="max-w-[1200px] space-y-14">
+      <nav className="flex items-center gap-3 font-mono text-[10.5px] tracking-[0.18em] uppercase">
+        <Link href={`/brands/${shoot.brand_id}`} className="link-slide text-[var(--muted)] hover:text-[var(--ink)]">
+          {brandName ?? 'Brand'}
+        </Link>
+        <span className="text-[var(--hair-strong)]">/</span>
+        <Link href={`/shoots/${shoot.id}`} className="link-slide text-[var(--muted)] hover:text-[var(--ink)]">
+          {shoot.title}
+        </Link>
+        <span className="text-[var(--hair-strong)]">/</span>
+        <span className="text-[var(--signal)]">Reel</span>
       </nav>
+
       <ReelEditor reel={reel} canEdit={canEdit} />
       <ReelReferencesList reelId={reel.id} initial={refs ?? []} canEdit={canEdit} />
     </div>

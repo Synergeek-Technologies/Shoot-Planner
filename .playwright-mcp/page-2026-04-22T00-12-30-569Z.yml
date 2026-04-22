@@ -1,0 +1,35 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: Scene 01 · Int. Studio — Night
+        - generic [ref=e6]: Take 01
+      - generic [ref=e7]:
+        - generic [ref=e8]: Synergeek · Est. 2026
+        - heading "A planner for every frame you intend to shoot." [level=1] [ref=e9]
+        - paragraph [ref=e10]: Scripts, references, products, locations — gathered in one quiet room and moved through the pipeline with the whole team watching.
+      - generic [ref=e11]:
+        - generic [ref=e12]: Roll 04 / A-Cam
+        - generic [ref=e13]: — fin —
+    - generic [ref=e15]:
+      - generic [ref=e16]: Access
+      - heading "Sign in." [level=2] [ref=e17]
+      - paragraph [ref=e18]:
+        - text: New here?
+        - link "Request an account" [ref=e19] [cursor=pointer]:
+          - /url: /signup
+        - text: .
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - text: Email
+          - textbox "Email" [ref=e22]
+        - generic [ref=e23]:
+          - text: Password
+          - textbox "Password" [ref=e24]
+        - button "Enter →" [ref=e25]:
+          - generic [ref=e26]: Enter
+          - generic [ref=e27]: →
+  - button "Open Next.js Dev Tools" [ref=e33] [cursor=pointer]:
+    - img [ref=e34]
+  - alert [ref=e37]

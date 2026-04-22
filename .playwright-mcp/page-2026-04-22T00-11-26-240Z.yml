@@ -1,0 +1,41 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - main [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: Request access
+      - heading "Join the crew." [level=2] [ref=e6]
+      - paragraph [ref=e7]:
+        - text: Already on board?
+        - link "Sign in" [ref=e8] [cursor=pointer]:
+          - /url: /login
+        - text: .
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - text: Full name
+          - textbox "Full name" [ref=e11]
+        - generic [ref=e12]:
+          - text: Email
+          - textbox "Email" [ref=e13]
+        - generic [ref=e14]:
+          - text: Password · 8+ chars
+          - textbox "Password · 8+ chars" [ref=e15]
+        - button "Create account →" [ref=e16]:
+          - generic [ref=e17]: Create account
+          - generic [ref=e18]: →
+        - paragraph [ref=e19]: New accounts land as viewer until an admin grants more access.
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]: Scene 02 · New face on set
+        - generic [ref=e23]: Take 01
+      - generic [ref=e24]:
+        - generic [ref=e25]: Welcome aboard
+        - heading "Good light, good company, and a plan that holds." [level=1] [ref=e26]:
+          - text: Good light, good company,
+          - text: and a plan that holds.
+        - paragraph [ref=e27]: Your sign-up creates a viewer account. Ask an admin to mark you as an editor when you’re ready to build shoots of your own.
+      - generic [ref=e28]:
+        - generic [ref=e29]: Ref · Op. 014
+        - generic [ref=e30]: — action —
+  - button "Open Next.js Dev Tools" [ref=e36] [cursor=pointer]:
+    - img [ref=e37]
+  - alert [ref=e40]

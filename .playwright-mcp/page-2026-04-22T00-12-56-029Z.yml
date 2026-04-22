@@ -1,0 +1,125 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e33] [cursor=pointer]:
+    - img [ref=e34]
+  - alert [ref=e37]
+  - generic [ref=e38]:
+    - complementary [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]: Est. 2026 · Film Op.
+        - link "Synergeek Shoot Planner" [ref=e42] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e43]: Synergeek
+          - generic [ref=e44]: Shoot Planner
+      - navigation [ref=e45]:
+        - link "01 Overview" [ref=e46] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e47]: "01"
+          - generic [ref=e48]: Overview
+        - link "02 Calendar" [ref=e49] [cursor=pointer]:
+          - /url: /calendar
+          - generic [ref=e50]: "02"
+          - generic [ref=e51]: Calendar
+        - link "03 Brands" [ref=e52] [cursor=pointer]:
+          - /url: /brands
+          - generic [ref=e53]: "03"
+          - generic [ref=e54]: Brands
+        - link "04 Team" [ref=e55] [cursor=pointer]:
+          - /url: /team
+          - generic [ref=e56]: "04"
+          - generic [ref=e57]: Team
+        - link "05 Account" [ref=e58] [cursor=pointer]:
+          - /url: /account
+          - generic [ref=e59]: "05"
+          - generic [ref=e60]: Account
+      - generic [ref=e61]:
+        - generic [ref=e62]: Currently
+        - paragraph [ref=e63]:
+          - text: A quiet room,
+          - text: good light,
+          - text: and a plan.
+    - generic [ref=e64]:
+      - banner [ref=e65]:
+        - generic [ref=e66]:
+          - generic [ref=e67]: 22 APR 2026
+          - generic [ref=e69]: Production Desk
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: ◆
+            - generic [ref=e73]: Sidharth
+            - generic [ref=e74]: admin
+          - button "Sign out" [ref=e77]
+      - main [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - generic [ref=e82]: DESK / WEDNESDAY, APRIL 22ND, 2026
+            - generic [ref=e84]:
+              - heading "Today, quietly on schedule." [level=1] [ref=e85]:
+                - text: Today, quietly
+                - text: on schedule.
+              - paragraph [ref=e86]: Seven-day forecast of shoots, where each reel is in the pipeline, and what the team just did.
+          - generic [ref=e87]:
+            - generic [ref=e88]:
+              - generic [ref=e89]:
+                - generic [ref=e90]: Pipeline · Status
+                - heading "6 reels in flight" [level=2] [ref=e91]:
+                  - text: "6"
+                  - generic [ref=e92]: reels in flight
+              - generic [ref=e93]: live count
+            - generic [ref=e94]:
+              - generic [ref=e95]:
+                - generic [ref=e97]: "01"
+                - generic [ref=e99]:
+                  - generic [ref=e100]: "2"
+                  - generic [ref=e101]: Planning
+              - generic [ref=e102]:
+                - generic [ref=e104]: "02"
+                - generic [ref=e106]:
+                  - generic [ref=e107]: "1"
+                  - generic [ref=e108]: Ready
+              - generic [ref=e109]:
+                - generic [ref=e111]: "03"
+                - generic [ref=e113]:
+                  - generic [ref=e114]: "1"
+                  - generic [ref=e115]: Shot
+              - generic [ref=e116]:
+                - generic [ref=e118]: "04"
+                - generic [ref=e120]:
+                  - generic [ref=e121]: "1"
+                  - generic [ref=e122]: Edited
+              - generic [ref=e123]:
+                - generic [ref=e125]: "05"
+                - generic [ref=e127]:
+                  - generic [ref=e128]: "1"
+                  - generic [ref=e129]: Posted
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - generic [ref=e132]:
+                - generic [ref=e133]: Call sheet · Next 7 days
+                - heading "On the books this week" [level=2] [ref=e134]
+              - link "Full calendar →" [ref=e135] [cursor=pointer]:
+                - /url: /calendar
+            - list [ref=e136]:
+              - listitem [ref=e137]:
+                - link "SAT 25 APR Meridian Watches Obsidian Edition launch 05:42" [ref=e138] [cursor=pointer]:
+                  - /url: /shoots/43ed5324-8206-47bf-9e63-74c6150b14f0
+                  - generic [ref=e139]: SAT 25 APR
+                  - generic [ref=e140]:
+                    - generic [ref=e141]: Meridian Watches
+                    - generic [ref=e142]: Obsidian Edition launch
+                  - generic [ref=e143]: 05:42
+              - listitem [ref=e144]:
+                - link "MON 27 APR Kura Café Morning ritual series 05:42" [ref=e145] [cursor=pointer]:
+                  - /url: /shoots/2184d52f-22b4-4e07-aa62-d3130e347615
+                  - generic [ref=e146]: MON 27 APR
+                  - generic [ref=e147]:
+                    - generic [ref=e148]: Kura Café
+                    - generic [ref=e149]: Morning ritual series
+                  - generic [ref=e150]: 05:42
+          - generic [ref=e151]:
+            - generic [ref=e152]:
+              - generic [ref=e153]: Log · Latest takes
+              - heading "What just happened" [level=2] [ref=e154]
+            - generic [ref=e155]:
+              - generic [ref=e156]: —
+              - generic [ref=e157]: No entries in the log yet.
