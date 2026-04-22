@@ -2,6 +2,7 @@
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
 import Link from 'next/link';
+import Image from 'next/image';
 import { signInAction } from './actions';
 
 function SubmitButton() {
@@ -35,7 +36,15 @@ export default function LoginPage() {
         </div>
 
         <div className="max-w-lg fade-up">
-          <div className="label-eyebrow mb-5 text-[var(--signal)]">Synergeek · Est. 2026</div>
+          <Image
+            src="/synergeek-wordmark.png"
+            alt="Synergeek"
+            width={1600}
+            height={900}
+            priority
+            className="mb-6 h-auto w-[180px]"
+          />
+          <div className="label-eyebrow mb-5 text-[var(--signal)]">Est. 2026</div>
           <h1 className="font-display text-[clamp(52px,7vw,96px)] leading-[0.95] tracking-tight text-[var(--ink)]">
             A planner for <span className="italic text-[var(--signal)]">every frame</span> you intend to shoot.
           </h1>

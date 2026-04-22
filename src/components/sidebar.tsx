@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { UserRole } from '@/lib/auth/require-role';
 
 type Item = { href: string; label: string; key: string; n: string };
@@ -17,10 +18,15 @@ export function Sidebar({ role }: { role: UserRole }) {
       <div className="px-6 pt-8 pb-10">
         <div className="label-eyebrow mb-3">Est. 2026 · Film Op.</div>
         <Link href="/" className="block">
-          <span className="font-display text-[34px] leading-none tracking-tight text-[var(--ink)]">
-            Syner<span className="italic text-[var(--signal)]">geek</span>
-          </span>
-          <div className="mt-1 text-[11px] font-mono tracking-[0.18em] uppercase text-[var(--muted)]">
+          <Image
+            src="/synergeek-wordmark.png"
+            alt="Synergeek"
+            width={1600}
+            height={900}
+            priority
+            className="h-auto w-[148px]"
+          />
+          <div className="mt-3 text-[11px] font-mono tracking-[0.18em] uppercase text-[var(--muted)]">
             Shoot Planner
           </div>
         </Link>

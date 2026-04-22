@@ -4,9 +4,8 @@ import { format } from 'date-fns';
 import { getServerSupabase } from '@/lib/supabase/server';
 import { getCurrentUser } from '@/lib/auth/require-role';
 import { NewReelDialog } from '@/components/new-reel-dialog';
-import { StatusBadge } from '@/components/status-badge';
 import { PageHeader } from '@/components/page-header';
-import type { ReelStatus } from '@/lib/schemas/reel';
+import { ReelExpandable, type ExpandableReel } from '@/components/reel-expandable';
 
 export default async function ShootDetailPage({ params }: { params: Promise<{ shootId: string }> }) {
   const { shootId } = await params;
@@ -16,8 +15,10 @@ export default async function ShootDetailPage({ params }: { params: Promise<{ sh
     .from('shoots').select('*, brand:brands(id, name)').eq('id', shootId).single();
   if (!shoot) notFound();
   const { data: reels } = await supabase
-    .from('reels').select('id, title, status, position')
-    .eq('shoot_id', shoot.id).order('position', { ascending: true });
+    .from('reels')
+    .select('id, title, status, position, script_text, script_file_url, product_name, product_image_url, location_text, location_image_url, reel_references(id, url, label)')
+    .eq('shoot_id', shoot.id)
+    .order('position', { ascending: true });
 
   const brand = shoot.brand as { id: string; name: string } | { id: string; name: string }[];
   const brandObj = Array.isArray(brand) ? brand[0] : brand;
@@ -74,18 +75,7 @@ export default async function ShootDetailPage({ params }: { params: Promise<{ sh
         ) : (
           <ul className="border-t border-[var(--hair)]">
             {(reels ?? []).map((r, i) => (
-              <li key={r.id} className="border-b border-[var(--hair)] transition-colors hover:bg-[var(--card)]">
-                <Link href={`/reels/${r.id}`} className="grid grid-cols-[60px_1fr_auto_auto] items-baseline gap-6 px-2 py-5">
-                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-[var(--muted)]">
-                    R-{String(i + 1).padStart(3, '0')}
-                  </span>
-                  <span className="font-display text-[24px] leading-tight text-[var(--ink)]">{r.title}</span>
-                  <StatusBadge status={r.status as ReelStatus} />
-                  <span className="link-slide font-mono text-[11px] tracking-[0.2em] uppercase text-[var(--ink-dim)]">
-                    Open →
-                  </span>
-                </Link>
-              </li>
+              <ReelExpandable key={r.id} index={i} reel={r as unknown as ExpandableReel} />
             ))}
           </ul>
         )}

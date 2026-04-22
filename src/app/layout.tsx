@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from '@/components/ui/sonner';
 
-const display = Instrument_Serif({
+const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-const body = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const body = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
@@ -28,6 +28,12 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Synergeek Shoot Planner",
   description: "Plan video shoots for client brands.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: { index: false, follow: false, noimageindex: true },
+  },
 };
 
 export default function RootLayout({

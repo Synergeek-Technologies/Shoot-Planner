@@ -41,9 +41,9 @@
   --color-sidebar-accent-foreground: var(--ink);
   --color-sidebar-ring: var(--signal);
 
-  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans: var(--font-body), "Inter", system-ui, sans-serif;
   --font-mono: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
-  --font-display: var(--font-display), "Instrument Serif", "Times New Roman", serif;
+  --font-display: var(--font-display), "Fraunces", "Times New Roman", serif;
 
   --radius-sm: 2px;
   --radius-md: 3px;
@@ -90,11 +90,19 @@
 
 @layer base {
   * { border-color: var(--hair); }
-  html { font-family: var(--font-sans); font-feature-settings: "ss01", "cv11"; }
+  html {
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   body {
     background: var(--paper);
     color: var(--ink);
     font-feature-settings: "ss01", "cv11";
+    line-height: 1.55;
+    letter-spacing: -0.005em;
     /* subtle grain overlay — darkroom texture */
     background-image:
       radial-gradient(color-mix(in srgb, var(--paper-noise) 60%, transparent) 1px, transparent 1.2px),
@@ -111,8 +119,8 @@
   /* Small-caps label used throughout the UI */
   .label-eyebrow {
     font-family: var(--font-mono);
-    font-size: 10.5px;
-    letter-spacing: 0.18em;
+    font-size: 12px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--muted);
     font-weight: 500;
